@@ -1,0 +1,48 @@
+{
+    "version": 1,
+    "author": "Anonymous maker",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "wokwi-pi-pico",
+        "id": "pico",
+        "top": 323.25,
+        "left": 109.2,
+        "attrs": { "env": "micropython-20231227-v1.22.0" }
+      },
+      { "type": "wokwi-lcd1602", "id": "lcd1", "top": 185.83, "left": 246.4, "attrs": {} },
+      {
+        "type": "wokwi-pushbutton",
+        "id": "btn1",
+        "top": 236.6,
+        "left": 124.8,
+        "attrs": { "color": "red" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 291.95,
+        "left": 124.8,
+        "attrs": { "value": "1000" }
+      }
+    ],
+    "connections": [
+      [ "lcd1:VSS", "pico:GND.7", "green", [ "v0" ] ],
+      [ "lcd1:VDD", "pico:VBUS", "green", [ "v0" ] ],
+      [ "lcd1:A", "pico:VBUS", "green", [ "v0" ] ],
+      [ "lcd1:V0", "pico:GND.7", "green", [ "v0" ] ],
+      [ "lcd1:RS", "pico:GP16", "green", [ "v0" ] ],
+      [ "lcd1:RW", "pico:GND.6", "green", [ "v0" ] ],
+      [ "lcd1:E", "pico:GP17", "green", [ "v0" ] ],
+      [ "lcd1:D4", "pico:GP21", "green", [ "v0" ] ],
+      [ "lcd1:D5", "pico:GP20", "green", [ "v0" ] ],
+      [ "lcd1:D6", "pico:GP19", "green", [ "v0" ] ],
+      [ "lcd1:D7", "pico:GP18", "green", [ "v0" ] ],
+      [ "lcd1:K", "pico:GND.7", "green", [ "v0" ] ],
+      [ "btn1:1.r", "pico:VBUS", "green", [ "v0", "h29", "v76.8", "h9.6" ] ],
+      [ "btn1:2.r", "r1:2", "green", [ "h0" ] ],
+      [ "r1:1", "pico:GND.1", "green", [ "v-9.6", "h-38.4", "v86.4" ] ],
+      [ "r1:2", "pico:GP0", "green", [ "v19.2", "h-87.6", "v28.8" ] ]
+    ],
+    "dependencies": {}
+  }
